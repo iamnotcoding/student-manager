@@ -6,7 +6,7 @@ def PrintMenu() -> None:
         1 : add
         2 : delete
         3 : search
-        4 : save''')
+        4 : quit''')
 
 def Start() -> None:
     # TODO
@@ -53,12 +53,11 @@ def Start() -> None:
                 except StudentNotFound:
                     print('student not found')
                     continue
-
                 print('found student : ', end=' ')
                 StudentsMarkManager.ShowStudentMark(foundStudent)
         elif menu == 4:
-            print('Bye')
-            break
+             print('Bye')
+             break
         else:
             print('invalid menu')
 

@@ -40,16 +40,16 @@ class StudentsMarkManager:
 
         # binary search
 
-        while end > start:
+        while end >= start:
             middle = (end + start) // 2
 
             if self.students[middle][0] == name:
                 result = middle
                 break
-            elif self.students[middle][0] > name:
-                end = middle - 1
-            else:
+            elif self.students[middle][0] < name:
                 start = middle + 1
+            else:
+                end = middle - 1
 
         return result
 
