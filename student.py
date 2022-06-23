@@ -7,7 +7,6 @@ class StudentMark:
         self.markSum = self.mathMark + self.englishMark + self.koreanMark
         self.markAvg = self.markSum / 3
 
-
 class StudentNotFound(Exception):
     def __str__(self):
         return 'student not found'
@@ -68,6 +67,7 @@ class StudentsMarkManager:
     def DelLastStudent(self) -> StudentMark:
         return self.students.pop()
 
+    @staticmethod
     def ShowStudentMark(student) -> None:
         print(f'name : {student[0]} math mark : {student[1].mathMark} english mark : {student[1].englishMark} '
               f' korean mark : {student[1].koreanMark} '
@@ -88,3 +88,7 @@ class StudentsMarkManager:
             result = self.students[index]
 
         return result
+
+    def GetStudents(self) -> list[StudentMark]:
+        ''' returns copy of the class' students list'''
+        return self.students.copy()
